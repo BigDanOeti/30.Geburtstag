@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mein Geburtstag 🎉</title>
+<title>30. Geburtstag · 28.–30. August 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -33,7 +33,6 @@
     line-height: 1.6;
   }
 
-  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(250,246,240,0.92);
@@ -48,7 +47,6 @@
   .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* HERO */
   .hero {
     min-height: 85vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -75,10 +73,16 @@
     margin-bottom: 1.5rem;
   }
   .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero-date {
-    font-size: 1.1rem; color: var(--muted); margin-bottom: 0.5rem;
+  .hero-dates {
+    display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 0.75rem;
   }
-  .hero-location { font-size: 0.9rem; color: var(--muted); }
+  .hero-date-pill {
+    background: var(--warm); border: 1px solid var(--border);
+    border-radius: 40px; padding: 0.4rem 1.2rem;
+    font-size: 0.875rem; color: var(--muted);
+  }
+  .hero-location { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
   .hero-divider {
     width: 60px; height: 1px; background: var(--gold-light);
     margin: 2.5rem auto;
@@ -93,8 +97,14 @@
     transition: background 0.2s, transform 0.15s;
   }
   .hero-cta:hover { background: #a87a30; transform: translateY(-1px); }
+  .deadline-banner {
+    margin-top: 1.5rem;
+    font-size: 0.8rem; color: #a07820;
+    background: #FEF8ED; border: 1px solid #e8c97a55;
+    padding: 0.5rem 1.25rem; border-radius: 40px;
+    display: inline-block;
+  }
 
-  /* SECTIONS */
   section { padding: 5rem 2rem; }
   .section-inner { max-width: 860px; margin: 0 auto; }
   .section-label {
@@ -108,37 +118,51 @@
   }
   .section-sub { color: var(--muted); max-width: 500px; margin-bottom: 3rem; line-height: 1.7; }
 
-  /* TIMELINE */
+  /* DAY HEADERS */
   #programm { background: var(--warm); }
+  .day-block { margin-bottom: 3.5rem; }
+  .day-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--dark);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem; margin-bottom: 1.75rem;
+    display: flex; align-items: baseline; gap: 0.75rem;
+  }
+  .day-label span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+  }
+
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
     width: 1px; background: var(--border);
   }
   .timeline-item {
-    position: relative; margin-bottom: 2.5rem;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    position: relative; margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
     background: var(--card); border: 1px solid var(--border);
     border-radius: 12px;
     transition: border-color 0.2s, transform 0.2s;
   }
   .timeline-item:hover { border-color: var(--gold-light); transform: translateX(4px); }
   .timeline-item::before {
-    content: ''; position: absolute; left: -2.5rem; top: 1.75rem;
+    content: ''; position: absolute; left: -2.5rem; top: 1.5rem;
     width: 10px; height: 10px; border-radius: 50%;
-    background: var(--gold); border: 2px solid var(--cream);
+    background: var(--gold); border: 2px solid var(--warm);
   }
-  .event-time { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--gold); font-weight: 500; margin-bottom: 0.4rem; text-transform: uppercase; }
-  .event-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 0.5rem; }
+  .event-time { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--gold); font-weight: 500; margin-bottom: 0.3rem; text-transform: uppercase; }
+  .event-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--dark); margin-bottom: 0.4rem; }
   .event-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
   .event-badge {
     display: inline-block; font-size: 0.7rem; padding: 3px 10px;
-    border-radius: 20px; margin-top: 0.75rem; font-weight: 500;
-    letter-spacing: 0.05em;
+    border-radius: 20px; margin-top: 0.6rem; font-weight: 500; letter-spacing: 0.05em;
   }
   .badge-optional { background: #FEF8ED; color: #a07820; border: 1px solid #e8c97a55; }
-  .badge-required { background: #F0EAF9; color: #6B46B0; border: 1px solid #b89fe055; }
+  .badge-main { background: #F0EAF9; color: #6B46B0; border: 1px solid #b89fe055; }
   .badge-outdoor { background: #EAF3DE; color: var(--success); border: 1px solid #c0dd9755; }
+  .badge-city { background: #E6F1FB; color: #185FA5; border: 1px solid #85b7eb55; }
 
   /* ACCOMMODATION */
   #unterkunft { background: var(--cream); }
@@ -146,31 +170,30 @@
   .accom-card {
     background: var(--card); border: 1px solid var(--border); border-radius: 12px;
     padding: 1.5rem; transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none; display: block; color: inherit;
   }
   .accom-card:hover { border-color: var(--gold-light); transform: translateY(-2px); }
   .accom-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-  .accom-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--dark); }
+  .accom-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--dark); }
   .accom-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+  .accom-link { font-size: 0.78rem; color: var(--gold); margin-top: 0.6rem; display: block; }
   .accom-tip {
     margin-top: 2rem; padding: 1.25rem 1.5rem;
     background: #FEF8ED; border: 1px solid #e8c97a55; border-radius: 12px;
     font-size: 0.875rem; color: #7A5A20; line-height: 1.6;
   }
-  .accom-tip strong { font-weight: 500; }
 
   /* RSVP */
   #rsvp { background: var(--warm); }
-  .rsvp-events { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
+  .rsvp-events { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
   .rsvp-event {
     background: var(--card); border: 1px solid var(--border); border-radius: 12px;
     padding: 1.25rem 1.5rem;
     display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem;
   }
-  .rsvp-event-info h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--dark); }
-  .rsvp-event-info p { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
-  .rsvp-toggle {
-    display: flex; gap: 0.5rem;
-  }
+  .rsvp-event-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--dark); }
+  .rsvp-event-info p { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+  .rsvp-toggle { display: flex; gap: 0.5rem; }
   .rsvp-btn {
     padding: 0.45rem 1rem; border-radius: 20px; border: 1px solid var(--border);
     font-size: 0.8rem; font-weight: 500; cursor: pointer; background: transparent;
@@ -182,23 +205,23 @@
 
   .rsvp-form { max-width: 560px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
   .form-group label { font-size: 0.8rem; color: var(--muted); font-weight: 500; letter-spacing: 0.03em; }
   .form-group input, .form-group textarea, .form-group select {
     padding: 0.65rem 1rem; border: 1px solid var(--border); border-radius: 8px;
     font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text);
-    background: var(--card); transition: border-color 0.2s;
-    outline: none;
+    background: var(--card); transition: border-color 0.2s; outline: none;
   }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
   .form-group textarea { resize: vertical; min-height: 90px; }
   .submit-btn {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 0.8rem 2.5rem; border-radius: 40px; border: none;
     background: var(--gold); color: #fff; font-size: 0.9rem; font-weight: 500;
     font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s, transform 0.15s;
   }
   .submit-btn:hover { background: #a87a30; transform: translateY(-1px); }
+  .divider { width: 40px; height: 2px; background: var(--gold); margin: 1.5rem 0 2rem; }
   .rsvp-success {
     display: none; text-align: center; padding: 3rem 2rem;
   }
@@ -206,7 +229,6 @@
   .rsvp-success h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 0.5rem; }
   .rsvp-success p { color: var(--muted); }
 
-  /* FOOTER */
   footer {
     text-align: center; padding: 2.5rem 1rem;
     font-size: 0.8rem; color: var(--muted);
@@ -214,21 +236,18 @@
     background: var(--cream);
   }
 
-  /* UTILITIES */
-  .divider { width: 40px; height: 2px; background: var(--gold); margin: 1.5rem 0 2.5rem; }
-
   @media (max-width: 600px) {
     .nav-links { display: none; }
     .form-row { grid-template-columns: 1fr; }
     .rsvp-event { grid-template-columns: 1fr; }
-    .rsvp-toggle { justify-content: flex-start; }
+    .hero-dates { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">★ Geburtstag</span>
+  <span class="nav-logo">★ 30. Geburtstag</span>
   <ul class="nav-links">
     <li><a href="#programm">Programm</a></li>
     <li><a href="#unterkunft">Unterkunft</a></li>
@@ -236,57 +255,84 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <p class="hero-label">Du bist eingeladen</p>
-  <h1>Ein <em>besonderer</em><br>Abend</h1>
-  <p class="hero-date">Samstag, 14. Juni 2025 · ab 17:00 Uhr</p>
-  <p class="hero-location">📍 Mustergasse 12, Berlin</p>
+  <p class="hero-label">Du bist herzlich eingeladen</p>
+  <h1>Dreißig wird<br><em>gefeiert</em></h1>
+  <div class="hero-dates">
+    <span class="hero-date-pill">🔥 28. August · Grillfest</span>
+    <span class="hero-date-pill">🎂 29. August · Geburtstag</span>
+    <span class="hero-date-pill">☀️ 30. August · Ausklang</span>
+  </div>
+  <p class="hero-location">📍 Hamburg · Volksdorf & Innenstadt</p>
   <div class="hero-divider"></div>
   <p class="hero-intro">
-    Es wäre wunderbar, diesen besonderen Tag mit dir zu feiern. Schau dir das Programm an und melde dich gerne für die einzelnen Programmpunkte an.
+    Ein ganzes Wochenende voller schöner Momente – von einem gemütlichen Grillabend im Garten über eine Stadtführung durch Hamburg bis zur großen Geburtstagsfeier im Reethaus.
   </p>
   <a href="#rsvp" class="hero-cta">Jetzt anmelden →</a>
+  <p class="deadline-banner">⏰ RSVP bis 31. Juli 2025 erbeten</p>
 </section>
 
 <!-- PROGRAMM -->
 <section id="programm">
   <div class="section-inner">
-    <p class="section-label">Der Abend</p>
+    <p class="section-label">Das Wochenende</p>
     <h2 class="section-title">Ablaufplan</h2>
-    <p class="section-sub">Alles auf einen Blick – von der entspannten Ankunft bis zum späten Abend.</p>
+    <p class="section-sub">Komm für einen Abend oder bleib das ganze Wochenende – du entscheidest!</p>
 
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <p class="event-time">17:00 – 18:30</p>
-        <h3 class="event-title">Ankommen & Aperitivo</h3>
-        <p class="event-desc">Gemütliches Ankommen im Garten, Begrüßungsgetränke, Musik und Zeit zum Plaudern.</p>
-        <span class="event-badge badge-outdoor">Outdoor · Garten</span>
+    <!-- FREITAG -->
+    <div class="day-block">
+      <div class="day-label">
+        Freitag, 28. August
+        <span>Tag 1</span>
       </div>
-
-      <div class="timeline-item">
-        <p class="event-time">18:30 – 21:00</p>
-        <h3 class="event-title">Festliches Abendessen</h3>
-        <p class="event-desc">Ein mehrgängiges Dinner mit saisonalen Zutaten. Vegetarische und vegane Optionen sind vorhanden – bitte beim RSVP angeben.</p>
-        <span class="event-badge badge-required">Hauptevent</span>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="event-time">Ab 18:30 Uhr</p>
+          <h3 class="event-title">Grillfest im Garten</h3>
+          <p class="event-desc">Entspannter Auftakt des Wochenendes mit Grill, guten Gesprächen und kühlen Getränken im Garten des Elternhauses in Volksdorf. Die genaue Adresse wird persönlich bekanntgegeben.</p>
+          <span class="event-badge badge-outdoor">Outdoor · Volksdorf</span>
+        </div>
       </div>
-
-      <div class="timeline-item">
-        <p class="event-time">21:00 – 22:30</p>
-        <h3 class="event-title">Kuchen & Geschichten</h3>
-        <p class="event-desc">Die Geburtstagstorte erscheint, Toasts werden ausgesprochen und Erinnerungen geteilt. Wer eine kleine Rede halten möchte, ist herzlich eingeladen.</p>
-        <span class="event-badge badge-required">Hauptevent</span>
-      </div>
-
-      <div class="timeline-item">
-        <p class="event-time">22:30 – open end</p>
-        <h3 class="event-title">Party & Tanzen</h3>
-        <p class="event-desc">DJ-Set, Tanzfläche und Late-Night-Bar. Wer möchte, kann gerne bis in den frühen Morgen feiern.</p>
-        <span class="event-badge badge-optional">Optional · Late Night</span>
-      </div>
-
     </div>
+
+    <!-- SAMSTAG -->
+    <div class="day-block">
+      <div class="day-label">
+        Samstag, 29. August
+        <span>Tag 2 · Der Geburtstag</span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="event-time">Ab 13:00 Uhr</p>
+          <h3 class="event-title">Stadtführung Hamburg</h3>
+          <p class="event-desc">Gemeinsam erkunden wir die Hamburger Innenstadt – Geschichte, Highlights und versteckte Ecken der schönsten Stadt Deutschlands. Treffpunkt wird noch bekanntgegeben.</p>
+          <span class="event-badge badge-city">Hamburg Innenstadt</span>
+        </div>
+        <div class="timeline-item">
+          <p class="event-time">Ab 18:00 Uhr</p>
+          <h3 class="event-title">Geburtstagsfeier im Reethaus</h3>
+          <p class="event-desc">Die eigentliche Feier zum 30. Geburtstag! Abendessen, Toasts, Musik und gemeinsame Momente im Reethaus in Volksdorf – der perfekte Rahmen für diesen besonderen Abend.</p>
+          <span class="event-badge badge-main">Hauptevent · Reethaus Volksdorf</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SONNTAG -->
+    <div class="day-block">
+      <div class="day-label">
+        Sonntag, 30. August
+        <span>Tag 3 · Ausklang</span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="event-time">Vormittags</p>
+          <h3 class="event-title">Gemeinsames Frühstück</h3>
+          <p class="event-desc">Wer möchte, trifft sich zum entspannten Ausklang beim Frühstück. Details folgen – einfach beim RSVP Interesse angeben.</p>
+          <span class="event-badge badge-optional">Optional · Details folgen</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -295,33 +341,49 @@
   <div class="section-inner">
     <p class="section-label">Wo schlafen?</p>
     <h2 class="section-title">Unterkunftstipps</h2>
-    <p class="section-sub">Da der Abend lang werden könnte – und soll – hier ein paar Empfehlungen für die Nacht in der Nähe.</p>
+    <p class="section-sub">Damit der Abend lang werden kann – hier unsere Empfehlungen für Hotels in und um Volksdorf.</p>
 
     <div class="accom-grid">
-      <div class="accom-card">
+
+      <a class="accom-card" href="https://hoteldunord.hamburg/volksdorf/" target="_blank" rel="noopener">
         <div class="accom-icon">🏨</div>
-        <h3>Hotel am Stadtpark</h3>
-        <p>Gehobenes Boutique-Hotel, 10 Minuten zu Fuß. Zimmer ab ca. 120 €/Nacht. Bitte frühzeitig buchen – unter „Gruppe Juni" gibt es 15 % Rabatt.</p>
-      </div>
-      <div class="accom-card">
+        <h3>Hotel du Nord</h3>
+        <p>Direkt in Volksdorf, fußläufig zum Reethaus. Gemütliches Hotel mitten im Grünen.</p>
+        <span class="accom-link">hoteldunord.hamburg →</span>
+      </a>
+
+      <a class="accom-card" href="https://excellent-hotel-hamburg.de/" target="_blank" rel="noopener">
+        <div class="accom-icon">🎷</div>
+        <h3>Excellent Hotel & Jazz Café</h3>
+        <p>Kleines, charmantes Hotel in Volksdorf mit Jazz-Bar – günstig und mit viel Charakter.</p>
+        <span class="accom-link">excellent-hotel-hamburg.de →</span>
+      </a>
+
+      <a class="accom-card" href="https://mellingburgerschleuse.de/" target="_blank" rel="noopener">
+        <div class="accom-icon">🌿</div>
+        <h3>Mellingburger Schleuse</h3>
+        <p>Ruhiger Rückzugsort an der Mellingburger Schleuse – Natur pur direkt vor der Tür.</p>
+        <span class="accom-link">mellingburgerschleuse.de →</span>
+      </a>
+
+      <a class="accom-card" href="https://hamburgsleepclub.com/" target="_blank" rel="noopener">
         <div class="accom-icon">🛏️</div>
-        <h3>Pension Waldblick</h3>
-        <p>Gemütlich und günstig, ca. 5 Min. mit dem Fahrrad. Zimmer ab 65 €/Nacht. Familiär, ruhig, Frühstück inklusive.</p>
-      </div>
+        <h3>Hamburg Sleep Club</h3>
+        <p>Modernes Boutique-Hotel in Volksdorf, 3 Min. zur U1 Buchenkamp. Durchdachtes Design, ruhige Zimmer.</p>
+        <span class="accom-link">hamburgsleepclub.com →</span>
+      </a>
+
       <div class="accom-card">
         <div class="accom-icon">🏠</div>
-        <h3>Airbnb / VRBO</h3>
-        <p>In der Gegend gibt es mehrere schöne Apartments. Empfehlung: Auf „Mitte" oder „Prenzlauer Berg" filtern für gute Anbindung.</p>
+        <h3>Airbnb</h3>
+        <p>In Volksdorf und Umgebung gibt es schöne Apartments – ideal für Gruppen oder wenn ihr länger bleiben möchtet.</p>
+        <span class="accom-link" style="color: var(--muted);">airbnb.de durchsuchen</span>
       </div>
-      <div class="accom-card">
-        <div class="accom-icon">🛖</div>
-        <h3>Bei uns übernachten</h3>
-        <p>Wir haben zwei Gästezimmer. Auf Anfrage im RSVP-Formular – wer zuerst kommt, malt zuerst! Platz ist begrenzt.</p>
-      </div>
+
     </div>
 
     <div class="accom-tip">
-      🚕 <strong>Heimweg:</strong> Taxis und Uber sind gut verfügbar. Alternativ: Nachtbusse M10 & N1 fahren stündlich bis ca. 5:00 Uhr. Wir empfehlen <strong>nicht</strong> das Autofahren nach dem Abend.
+      🚇 <strong>Anreise:</strong> Volksdorf ist bequem mit der U1 erreichbar (Endstation Volksdorf). Von der Hamburger Innenstadt ca. 30 Minuten. Für den Heimweg nach der Feier empfehlen wir Taxi, Uber oder die Nachtbusse – bitte nicht selbst fahren!
     </div>
   </div>
 </section>
@@ -331,53 +393,53 @@
   <div class="section-inner">
     <p class="section-label">Anmeldung</p>
     <h2 class="section-title">RSVP</h2>
-    <p class="section-sub">Melde dich für die einzelnen Programmpunkte an – so können wir besser planen. Bitte bis 31. Mai antworten.</p>
+    <p class="section-sub">Bitte melde dich bis zum <strong>31. Juli 2025</strong> an – für jeden Programmpunkt separat, damit wir gut planen können.</p>
 
     <div id="rsvp-form-area">
 
-      <div class="rsvp-events" id="rsvp-events">
+      <div class="rsvp-events">
 
-        <div class="rsvp-event" data-event="aperitivo">
+        <div class="rsvp-event" data-event="grill">
           <div class="rsvp-event-info">
-            <h4>Aperitivo (17:00)</h4>
-            <p>Ankommen & Begrüßungsgetränke im Garten</p>
+            <h4>🔥 Grillfest (Fr. 28.8. ab 18:30)</h4>
+            <p>Gemütlicher Auftakt im Garten · Volksdorf</p>
           </div>
           <div class="rsvp-toggle">
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'aperitivo', 'yes')">✓ Ich komme</button>
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'aperitivo', 'no')">✗ Nein</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'grill', 'yes')">✓ Ich komme</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'grill', 'no')">✗ Nein</button>
           </div>
         </div>
 
-        <div class="rsvp-event" data-event="dinner">
+        <div class="rsvp-event" data-event="stadtfuehrung">
           <div class="rsvp-event-info">
-            <h4>Abendessen (18:30)</h4>
-            <p>Mehrgängiges Dinner – Hauptevent des Abends</p>
+            <h4>🗺️ Stadtführung (Sa. 29.8. ab 13:00)</h4>
+            <p>Hamburg Innenstadt · Treffpunkt folgt</p>
           </div>
           <div class="rsvp-toggle">
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'dinner', 'yes')">✓ Ich komme</button>
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'dinner', 'no')">✗ Nein</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'stadtfuehrung', 'yes')">✓ Ich komme</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'stadtfuehrung', 'no')">✗ Nein</button>
           </div>
         </div>
 
-        <div class="rsvp-event" data-event="torte">
+        <div class="rsvp-event" data-event="feier">
           <div class="rsvp-event-info">
-            <h4>Kuchen & Toasts (21:00)</h4>
-            <p>Geburtstagstorte und gemeinsame Momente</p>
+            <h4>🎂 Geburtstagsfeier (Sa. 29.8. ab 18:00)</h4>
+            <p>Reethaus Volksdorf · Hauptevent</p>
           </div>
           <div class="rsvp-toggle">
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'torte', 'yes')">✓ Ich komme</button>
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'torte', 'no')">✗ Nein</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'feier', 'yes')">✓ Ich komme</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'feier', 'no')">✗ Nein</button>
           </div>
         </div>
 
-        <div class="rsvp-event" data-event="party">
+        <div class="rsvp-event" data-event="fruehstueck">
           <div class="rsvp-event-info">
-            <h4>Party & Tanzen (22:30)</h4>
-            <p>Late-Night-Part – so lang du magst!</p>
+            <h4>☀️ Frühstück (So. 30.8. vormittags)</h4>
+            <p>Entspannter Ausklang · optional</p>
           </div>
           <div class="rsvp-toggle">
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'party', 'yes')">✓ Ich komme</button>
-            <button class="rsvp-btn" onclick="toggleRsvp(this, 'party', 'no')">✗ Nein</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'fruehstueck', 'yes')">✓ Ich komme</button>
+            <button class="rsvp-btn" onclick="toggleRsvp(this, 'fruehstueck', 'no')">✗ Nein</button>
           </div>
         </div>
 
@@ -406,7 +468,7 @@
             <input type="tel" id="phone" placeholder="+49 ...">
           </div>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
+        <div class="form-group">
           <label>Kostform</label>
           <select id="diet">
             <option value="">Keine besonderen Anforderungen</option>
@@ -416,17 +478,16 @@
             <option value="sonstiges">Sonstiges (bitte unten angeben)</option>
           </select>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
+        <div class="form-group">
           <label>Übernachtung gewünscht?</label>
           <select id="sleep">
             <option value="">Nein / Ich habe schon was</option>
-            <option value="gästezimmer">Ja, Gästezimmer bei euch (Anfrage)</option>
-            <option value="empfehlung">Gerne eine Hotelempfehlung</option>
+            <option value="empfehlung">Ja, ich brauche noch eine Empfehlung</option>
           </select>
         </div>
         <div class="form-group">
           <label>Nachricht / Anmerkungen</label>
-          <textarea id="message" placeholder="Allergien, eine kleine Rede, oder einfach ein Gruß vorab…"></textarea>
+          <textarea id="message" placeholder="Allergien, Fragen, oder einfach ein Gruß vorab…"></textarea>
         </div>
 
         <button class="submit-btn" onclick="submitRsvp()">Anmeldung absenden →</button>
@@ -437,14 +498,14 @@
     <div class="rsvp-success" id="rsvp-success">
       <div class="checkmark">🎉</div>
       <h3>Vielen Dank!</h3>
-      <p>Deine Anmeldung ist eingegangen. Wir freuen uns riesig auf dich!<br>Eine Bestätigung geht in Kürze an deine E-Mail-Adresse.</p>
+      <p>Deine Anmeldung ist eingegangen. Wir freuen uns riesig auf dich!<br>Eine Bestätigung kommt in Kürze an deine E-Mail-Adresse.</p>
     </div>
 
   </div>
 </section>
 
 <footer>
-  Mit Freude gemacht für einen besonderen Abend · 2025
+  Mit Vorfreude gemacht · 30. Geburtstag · Hamburg 2025
 </footer>
 
 <script>
@@ -453,7 +514,7 @@
   function toggleRsvp(btn, event, choice) {
     const parent = btn.closest('.rsvp-event');
     const btns = parent.querySelectorAll('.rsvp-btn');
-    btns.forEach(b => { b.classList.remove('active-yes', 'active-no'); });
+    btns.forEach(b => b.classList.remove('active-yes', 'active-no'));
     btn.classList.add(choice === 'yes' ? 'active-yes' : 'active-no');
     rsvpState[event] = choice;
   }
@@ -461,13 +522,10 @@
   function submitRsvp() {
     const fname = document.getElementById('fname').value.trim();
     const email = document.getElementById('email').value.trim();
-
     if (!fname || !email) {
       alert('Bitte Vorname und E-Mail-Adresse angeben.');
       return;
     }
-
-    // Collect data
     const data = {
       name: fname + ' ' + document.getElementById('lname').value.trim(),
       email,
@@ -478,10 +536,8 @@
       rsvp: rsvpState,
       timestamp: new Date().toLocaleString('de-DE')
     };
-
     console.log('RSVP submitted:', data);
-    // TODO: Hier kannst du die Daten an ein Backend oder Formular-Dienst (z.B. Formspree) senden.
-
+    // TODO: fetch("https://formspree.io/f/DEINE-ID", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) });
     document.getElementById('rsvp-form-area').style.display = 'none';
     document.getElementById('rsvp-success').style.display = 'block';
   }
