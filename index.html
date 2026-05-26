@@ -567,8 +567,11 @@
       rsvp: rsvpState,
       timestamp: new Date().toLocaleString('de-DE')
     };
-    console.log('RSVP submitted:', data);
-    // TODO: fetch("https://formspree.io/f/DEINE-ID", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) });
+    fetch("https://formspree.io/f/xredyjlq", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
     document.getElementById('rsvp-form-area').style.display = 'none';
     document.getElementById('rsvp-success').style.display = 'block';
   }
